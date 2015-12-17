@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0FE1AE9FA4BD2383F4756F90'
+               BlueprintIdentifier = '892D1D589FD474417DBDA5DF'
                BlueprintName = 'UIKeyboardLikePickerTextField'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'UIKeyboardLikePickerTextField.framework'>

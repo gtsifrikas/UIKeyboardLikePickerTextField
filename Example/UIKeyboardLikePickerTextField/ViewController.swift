@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import UIKeyboardLikePickerTextField
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var pickerTextField: UIKeyboardLikePickerTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerTextField.pickerDataSource = ["These", "are", "some", "options"]
         // Do any additional setup after loading the view, typically from a nib.
     }
 

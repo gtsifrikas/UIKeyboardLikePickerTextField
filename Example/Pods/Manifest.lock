@@ -16,6 +16,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
-  UIKeyboardLikePickerTextField: edd44cdefbccec8a88f1c26523ec72172469c9ab
+  UIKeyboardLikePickerTextField: 3163067dad6e0b2b3dfa965f3a470b1e956d9d33
 
 COCOAPODS: 0.39.0

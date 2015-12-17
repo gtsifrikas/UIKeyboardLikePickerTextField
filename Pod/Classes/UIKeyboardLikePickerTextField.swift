@@ -8,14 +8,14 @@
 
 import UIKit
 
-class UIKeyboardLikePickerTextField: UITextField, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+public class UIKeyboardLikePickerTextField: UITextField, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     static var picker:UIPickerView?
     static var pickerToolbar:UIToolbar?
     static var picketToolbarButton: UIBarButtonItem?
     weak var otherDelegate: UITextFieldDelegate? = nil;
     weak private var parentView:UIView?
     
-    override weak var delegate: UITextFieldDelegate? {
+    override weak public var delegate: UITextFieldDelegate? {
         get {
             return self
         }
@@ -24,7 +24,7 @@ class UIKeyboardLikePickerTextField: UITextField, UIPickerViewDataSource, UIPick
         }
     }
     
-    var pickerDataSource:[String] = [] {
+    public var pickerDataSource:[String] = [] {
         didSet {
             focusedOnMe()
         }
@@ -36,7 +36,7 @@ class UIKeyboardLikePickerTextField: UITextField, UIPickerViewDataSource, UIPick
         checkStatus()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         super.delegate = self
         checkStatus()
@@ -109,49 +109,49 @@ class UIKeyboardLikePickerTextField: UITextField, UIPickerViewDataSource, UIPick
     }
     
     //MARK: - text filed self delegate
-    func textFieldDidBeginEditing(textField: UITextField){
+    public func textFieldDidBeginEditing(textField: UITextField){
         otherDelegate?.textFieldDidBeginEditing?(textField);
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    public func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         focusedOnMe()
         return otherDelegate?.textFieldShouldBeginEditing?(textField) ?? true
     }
     
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+    public func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         return otherDelegate?.textFieldShouldEndEditing?(textField) ?? true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    public func textFieldDidEndEditing(textField: UITextField) {
         otherDelegate?.textFieldDidEndEditing?(textField)
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         return otherDelegate?.textField?(textField, shouldChangeCharactersInRange: range, replacementString: string) ?? true
     }
     
-    func textFieldShouldClear(textField: UITextField) -> Bool {
+    public func textFieldShouldClear(textField: UITextField) -> Bool {
         return otherDelegate?.textFieldShouldClear?(textField) ?? true
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
         return otherDelegate?.textFieldShouldReturn?(textField) ?? true
     }
 
     //MARK: - picker delegate
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.pickerDataSource.count + 1
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.text = row == 0 ? "" : self.pickerDataSource[row - 1]
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return row > 0 ? self.pickerDataSource[row - 1] : ""
     }
 }
