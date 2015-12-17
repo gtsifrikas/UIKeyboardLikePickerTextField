@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'UIKeyboardLikePickerTextField_Example', :exclusive => true do
+  pod "UIKeyboardLikePickerTextField", :path => "../"
+end
+
+target 'UIKeyboardLikePickerTextField_Tests', :exclusive => true do
+  pod "UIKeyboardLikePickerTextField", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end
