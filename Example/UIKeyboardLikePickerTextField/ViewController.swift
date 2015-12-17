@@ -9,14 +9,20 @@
 import UIKit
 import UIKeyboardLikePickerTextField
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var pickerTextField: UIKeyboardLikePickerTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerTextField.delegate = self
         pickerTextField.pickerDataSource = ["These", "are", "some", "options"]
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.textField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
