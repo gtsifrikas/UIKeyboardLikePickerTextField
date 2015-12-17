@@ -1,0 +1,6 @@
+framework module UIKeyboardLikePickerTextField {
+  umbrella header "UIKeyboardLikePickerTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

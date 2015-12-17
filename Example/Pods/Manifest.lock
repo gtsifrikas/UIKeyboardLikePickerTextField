@@ -1,0 +1,21 @@
+PODS:
+  - FBSnapshotTestCase (2.0.7):
+    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
+  - FBSnapshotTestCase/Core (2.0.7)
+  - FBSnapshotTestCase/SwiftSupport (2.0.7):
+    - FBSnapshotTestCase/Core
+  - UIKeyboardLikePickerTextField (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - UIKeyboardLikePickerTextField (from `../`)
+
+EXTERNAL SOURCES:
+  UIKeyboardLikePickerTextField:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  UIKeyboardLikePickerTextField: edd44cdefbccec8a88f1c26523ec72172469c9ab
+
+COCOAPODS: 0.39.0
