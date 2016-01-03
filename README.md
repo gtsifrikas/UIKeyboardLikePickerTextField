@@ -1,5 +1,8 @@
 # UIKeyboardLikePickerTextField
 
+## Screenshot
+![Sample](http://i.imgur.com/ZL6hreG.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
